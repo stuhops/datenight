@@ -114,8 +114,8 @@ function handleSubmit() {
 
                     var resultingPlaces = [];
 
-                    var foodCheckbox = document.getElementById("food").value;
-                    if (foodCheckbox > 0) {
+                    var foodCheckbox = document.getElementById("food-form-include").checked;
+                    if (foodCheckbox) {
                         pickedFood = getRandomElement(orgResults.food);
                         resultingPlaces.push(pickedFood);
                         // for (var i = 0; i < orgResults.food.length; i++) {
@@ -125,8 +125,8 @@ function handleSubmit() {
                         // }
                     }
 
-                    var entertainmentCheckbox = document.getElementById("entertainment").value;
-                    if (entertainmentCheckbox > 0) {
+                    var entertainmentCheckbox = document.getElementById("entertainment-form-include").checked;
+                    if (entertainmentCheckbox) {
                         pickedEntertainment = getRandomElement(orgResults.entertainment);
                         resultingPlaces.push(pickedEntertainment);
 
@@ -137,8 +137,8 @@ function handleSubmit() {
                         // }
                     }
 
-                    var shoppingCheckbox = document.getElementById("shopping").value;
-                    if (shoopingCheckbox > 0) {
+                    var shoppingCheckbox = document.getElementById("shopping-form-include").checked;
+                    if (shoppingCheckbox) {
                         pickedShopping = getRandomElement(orgResults.shopping);
                         resultingPlaces.push(pickedShopping);
 
@@ -149,8 +149,8 @@ function handleSubmit() {
                         // }
                     }
 
-                    var selfcareCheckbox = document.getElementById("selfcare").value;
-                    if (selfcareCheckbox > 0) {
+                    var selfcareCheckbox = document.getElementById("self-care-form-include").checked;
+                    if (selfcareCheckbox) {
                         pickedSelfcare = getRandomElement(orgResults.selfcare);
                         resultingPlaces.push(pickedSelfcare);
 
@@ -161,8 +161,8 @@ function handleSubmit() {
                         // }
                     }
 
-                    var drinksCheckbox = document.getElementById("drinks").value;
-                    if (drinksCheckbox > 0) {
+                    var drinksCheckbox = document.getElementById("drinks-form-include").checked;
+                    if (drinksCheckbox) {
                         pickedDrinks = getRandomElement(orgResults.drinks);
                         resultingPlaces.push(pickedDrinks);
 
@@ -173,8 +173,8 @@ function handleSubmit() {
                         // }
                     }
 
-                    var randomCheckbox = document.getElementById("random").value;
-                    if (randomCheckbox > 0) {
+                    var randomCheckbox = document.getElementById("random-form-include").checked;
+                    if (randomCheckbox) {
                         pickedRandom = getRandomElement(orgResults.random);
                         resultingPlaces.push(pickedRandom);
 
@@ -186,9 +186,7 @@ function handleSubmit() {
                     }
 
 
-                    for (var i = 0; i < resultingPlaces.length; i++) {
-                        
-                    }
+                    
         
                     
         
@@ -286,5 +284,5 @@ function getLine() {
 }
 
 function getRandomElement(inputArray) {
-    return inputArray[Math.floor(Math.random() * foodArray.size())];
+    return inputArray[Math.floor(Math.random() * inputArray.length)];
 }
