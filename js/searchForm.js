@@ -77,7 +77,7 @@ function changeStars(rating, parentId) {
 
   if(rating <= starTotal &
          document.getElementById(parentId + '-' + rating).style.visibility == 'visible') {
-    if(rating == 4) {
+    if(rating == starTotal) {
       rating = 0;
     }
     else if(document.getElementById(parentId + '-' + (rating+1)).style.visibility == 'hidden') {

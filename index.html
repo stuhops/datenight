@@ -33,13 +33,17 @@
               <thead>
                 <tr>
                   <th>Category</th>
-                  <th>Rating</th>
+                  <th>Include</th>
+                  <th>I want to spend</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <input id="food-form" value="0" style="display: none;">
                   <td>Food</td>
+                  <td>
+                    <input type="checkbox" id="food-form-include">
+                  </td>
                   <td>
                     <span class="stars-outer" onclick="changeStars(1, 'food-form');">
                       <span id="food-form-1" class="stars-inner"></span>
@@ -59,6 +63,9 @@
                   <input id="entertainment-form" value="0" style="display: none;">
                   <td>Entertainment</td>
                   <td>
+                    <input type="checkbox" id="entertainment-form-include">
+                  </td>
+                  <td>
                     <span class="stars-outer" onclick="changeStars(1, 'entertainment-form');">
                       <span id="entertainment-form-1" class="stars-inner"></span>
                     </span>
@@ -76,6 +83,9 @@
                 <tr>
                   <input id="shopping-form" value="0" style="display: none;">
                   <td>Shopping</td>
+                  <td>
+                    <input type="checkbox" id="shopping-form-include">
+                  </td>
                   <td>
                     <span class="stars-outer" onclick="changeStars(1, 'shopping-form');">
                       <span id="shopping-form-1" class="stars-inner"></span>
@@ -95,6 +105,9 @@
                   <input id="self-care-form" value="0" style="display: none;">
                   <td>Self care</td>
                   <td>
+                    <input type="checkbox" id="self-care-form-include">
+                  </td>
+                  <td>
                     <span class="stars-outer" onclick="changeStars(1, 'self-care-form');">
                       <span id="self-care-form-1" class="stars-inner"></span>
                     </span>
@@ -112,6 +125,9 @@
                 <tr>
                   <input id="random-form" value="0" style="display: none;">
                   <td>Random</td>
+                  <td>
+                    <input type="checkbox" id="random-form-include">
+                  </td>
                   <td>
                     <span class="stars-outer" onclick="changeStars(1, 'random-form');">
                       <span id="random-form-1" class="stars-inner"></span>
