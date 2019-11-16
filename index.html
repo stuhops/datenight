@@ -22,10 +22,6 @@
                 <label for="loc">Location</label>
                 <input type="text" class="form-control" id="loc">
             </div>
-            <div class="form-group">
-                <label for="loc-radius">Mile Radius</label>
-                <input type="range" class="custom-range" min="1" max="20" id="loc-radius">
-            </div>
             <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
             <div id="info"></div>
             <div id="map-canvas"></div>
@@ -41,7 +37,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="food-form">
+                <tr>
+                  <input id="food-form" value="0" style="display: none;">
                   <td>Food</td>
                   <td>
                     <span class="stars-outer" onclick="changeStars(1, 'food-form');">
@@ -58,7 +55,8 @@
                     </span>
                   </td>
                 </tr>
-                <tr class="entertainment-form">
+                <tr>
+                  <input id="entertainment-form" value="0" style="display: none;">
                   <td>Entertainment</td>
                   <td>
                     <span class="stars-outer" onclick="changeStars(1, 'entertainment-form');">
@@ -75,7 +73,8 @@
                     </span>
                   </td>
                 </tr>
-                <tr class="shopping-form">
+                <tr>
+                  <input id="shopping-form" value="0" style="display: none;">
                   <td>Shopping</td>
                   <td>
                     <span class="stars-outer" onclick="changeStars(1, 'shopping-form');">
@@ -92,7 +91,8 @@
                     </span>
                   </td>
                 </tr>
-                <tr class="self-care-form">
+                <tr>
+                  <input id="self-care-form" value="0" style="display: none;">
                   <td>Self care</td>
                   <td>
                     <span class="stars-outer" onclick="changeStars(1, 'self-care-form');">
@@ -109,7 +109,8 @@
                     </span>
                   </td>
                 </tr>
-                <tr class="random-form">
+                <tr>
+                  <input id="random-form" value="0" style="display: none;">
                   <td>Random</td>
                   <td>
                     <span class="stars-outer" onclick="changeStars(1, 'random-form');">
