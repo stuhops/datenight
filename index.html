@@ -123,6 +123,26 @@
                   </td>
                 </tr>
                 <tr>
+                  <input id="drinks-form" value="0" style="display: none;">
+                  <td>Drinks</td>
+                  <td>
+                    <input type="checkbox" id="drinks-form-include">
+                  </td>
+                  <td>
+                    <span class="stars-outer" onclick="changeStars(1, 'drinks-form');">
+                      <span id="drinks-form-1" class="stars-inner"></span>
+                    </span>
+                    <span class="stars-outer" onclick="changeStars(2, 'drinks-form');">
+                      <span id="drinks-form-2" class="stars-inner"></span>
+                    </span>
+                    <span class="stars-outer" onclick="changeStars(3, 'drinks-form');">
+                      <span id="drinks-form-3" class="stars-inner"></span>
+                    </span>
+                    <span class="stars-outer" onclick="changeStars(4, 'drinks-form');">
+                      <span id="drinks-form-4" class="stars-inner"></span>
+                    </span>
+                  </td>
+                <tr>
                   <input id="random-form" value="0" style="display: none;">
                   <td>Random</td>
                   <td>
@@ -156,12 +176,14 @@
             </div>
           </div>
           
+          <button type="submit" class="btn btn-block bg-success">Submit</button> 
+
           <!-- Circles which indicates the steps of the form: -->
           <div style="text-align:center;margin-top:40px;">
             <span class="step"></span>
             <span class="step"></span>
           </div>
-          
+
           </form>
         </div>
       </div>
