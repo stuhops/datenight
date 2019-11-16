@@ -148,7 +148,7 @@ function RadiusWidget() {
   });
 
   // Set the distance property value, default to 10km.
-  this.set('distance', 10);
+  this.set('distance', 3);
 
   // Bind the RadiusWidget bounds property to the circle bounds property.
   this.bindTo('bounds', circle);
@@ -249,8 +249,10 @@ RadiusWidget.prototype.setDistance = function() {
 
 function init() {
   var mapDiv = document.getElementById('map-canvas');
+  let latitude = 41.745345;
+  let longitude = -111.810054;
   var map = new google.maps.Map(mapDiv, {
-    center: new google.maps.LatLng(37.790234970864, -122.39031314844),
+    center: new google.maps.LatLng(latitude, longitude),
     zoom: 11,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
