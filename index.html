@@ -407,18 +407,51 @@
                               items: []
                           };
 
+                          // console.log(resultingPlaces);
+
+
                           for (var i = 0; i < resultingPlaces.length; i++) {
+                            console.log("dafadfd" + resultingPlaces[0]);
                               var newPlace = {
-                                  name: resultingPlaces[i].name,
-                                  vicinity: resultingPlaces[i].vicinity,
-                                  img: resultingPlaces[i].photos[0],
+                                  name: "" + resultingPlaces[i].name,
+                                  vicinity: "" + resultingPlaces[i].vicinity,
+                                  // img: "" + resultingPlaces.keys(i).photos[0],
                               }
 
                               data.items.push(newPlace);
                           }          
 
+                          // console.dir(data);
+
                           
-                          displayResults();
+                          var template = `{{#items}}
+                          <div class="col-md-12 place">
+                                      <div class="card mb-4 shadow-sm">
+                                          <img src="img/Screen Shot 2019-11-15 at 10.25.30 PM.png" alt="">
+                                          <div class="card-body">
+                                              <h3>{{name}}</h3>
+                                              <h4>{{vicinity}}</h4>
+                                              <span class="badge badge-pill badge-primary">{{category}}</span>
+                                              <div><br></div>
+                                              <div class="d-flex justify-content-between align-items-center">
+                                                  <div class="btn-group">
+                                                      <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://loganlanesinc.com/">Detail</a></button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="arrow mx-auto"></div>
+                              </div>
+                              {{/items}}`;
+
+                          // Mustache.js実行
+                          var html = Mustache.render(template, data);
+
+                          // DOM操作
+                          $('#target').html(html);
               
                           // var data = {
                           //     items: [
@@ -472,47 +505,46 @@
 
 
 
-      function displayResults() {
-          // var data = {
-          // items: [
-          //     {name: "Logan Lanes", price: 200, time: "9:00am - 10:00pm", category: "Entertaiment", img: ""},
-          //     {name: "Logan Lanes", price: 200, time: "9:00am - 10:00pm", category: "Entertaiment", img: ""},
-          //     {name: "Logan Lanes", price: 200, time: "9:00am - 10:00pm", category: "Entertaiment", img: ""},
-          //     {name: "Logan Lanes", price: 200, time: "9:00am - 10:00pm", category: "Entertaiment", img: ""},
-          //     {name: "Logan Lanes", price: 200, time: "9:00am - 10:00pm", category: "Entertaiment", img: ""},
-          // ]
-          // };
+      // function displayResults() {
+      //     // var data = {
+      //     // items: [
+      //     //     {name: "Logan Lanes", price: 200, time: "9:00am - 10:00pm", category: "Entertaiment", img: ""},
+      //     //     {name: "Logan Lanes", price: 200, time: "9:00am - 10:00pm", category: "Entertaiment", img: ""},
+      //     //     {name: "Logan Lanes", price: 200, time: "9:00am - 10:00pm", category: "Entertaiment", img: ""},
+      //     //     {name: "Logan Lanes", price: 200, time: "9:00am - 10:00pm", category: "Entertaiment", img: ""},
+      //     //     {name: "Logan Lanes", price: 200, time: "9:00am - 10:00pm", category: "Entertaiment", img: ""},
+      //     // ]
+      //     // };
 
-          var template = `{{#items}}
-          <div class="col-md-12 place">
-                      <div class="card mb-4 shadow-sm">
-                          <img src="img/Screen Shot 2019-11-15 at 10.25.30 PM.png" alt="">
-                          <div class="card-body">
-                              <h3>{{name}}</h3>
-                              <h4>{{price}}</h4>
-                              <h4>{{time}}</h4>
-                              <span class="badge badge-pill badge-primary">{{category}}</span>
-                              <div><br></div>
-                              <div class="d-flex justify-content-between align-items-center">
-                                  <div class="btn-group">
-                                      <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://loganlanesinc.com/">Detail</a></button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-12">
-                  <div class="arrow mx-auto"></div>
-              </div>
-              {{/items}}`;
+      //     var template = `{{#items}}
+      //     <div class="col-md-12 place">
+      //                 <div class="card mb-4 shadow-sm">
+      //                     <img src="img/Screen Shot 2019-11-15 at 10.25.30 PM.png" alt="">
+      //                     <div class="card-body">
+      //                         <h3>{{name}}</h3>
+      //                         <h4>{{vicinity}}</h4>
+      //                         <span class="badge badge-pill badge-primary">{{category}}</span>
+      //                         <div><br></div>
+      //                         <div class="d-flex justify-content-between align-items-center">
+      //                             <div class="btn-group">
+      //                                 <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://loganlanesinc.com/">Detail</a></button>
+      //                             </div>
+      //                         </div>
+      //                     </div>
+      //                 </div>
+      //             </div>
+      //         </div>
+      //         <div class="col-md-12">
+      //             <div class="arrow mx-auto"></div>
+      //         </div>
+      //         {{/items}}`;
 
-          // Mustache.js実行
-          var html = Mustache.render(template, data);
+      //     // Mustache.js実行
+      //     var html = Mustache.render(template, data);
 
-          // DOM操作
-          $('#target').html(html);
-      };
+      //     // DOM操作
+      //     $('#target').html(html);
+      // };
   </script>
 
 
