@@ -20,51 +20,8 @@
         </div>
         <div class="py-5 bg-light">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12 place">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="img/Screen Shot 2019-11-15 at 10.25.30 PM.png" alt="">
-                            <div class="card-body">
-                                <h3>Logan Lanes</h3>
-                                <h4>$10</h4>
-                                <h4>9:00am - 10:00pm</h4>
-                                <span class="badge badge-pill badge-primary">Entertaimaint</span>
-                                <div><br></div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://loganlanesinc.com/">Detail</a></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="arrow mx-auto"></div>
-                    </div>
-                    <div class="col-md-12 place">
-                            <div class="card mb-4 shadow-sm">
-                                <img src="img/Screen Shot 2019-11-15 at 10.25.30 PM.png" alt="">
-                                <div class="card-body">
-                                    <h3>Logan Lanes</h3>
-                                    <h4>$10</h4>
-                                    <h4>9:00am - 10:00pm</h4>
-                                    <span class="badge badge-pill badge-primary">Entertaimaint</span>
-                                    <div><br></div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://loganlanesinc.com/">Detail</a></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="arrow mx-auto"></div>
-                    </div>
-                    <div id="target">
+                <div class="row" id="target">
 
-                    </div>
                 </div>
             </div>
         </div>
@@ -77,8 +34,11 @@
             $(function () {
                 var data = {
                 "items": [
-                    {"name": "Logan Lanes", "price": 200},
-                    {"name": "Chiken Chicken", "price": 10000}
+                    {"name": "Logan Lanes", "price": 200, "time": "9:00am - 10:00pm", "category": "Entertaiment", "img": ""},
+                    {"name": "Logan Lanes", "price": 200, "time": "9:00am - 10:00pm", "category": "Entertaiment", "img": ""},
+                    {"name": "Logan Lanes", "price": 200, "time": "9:00am - 10:00pm", "category": "Entertaiment", "img": ""},
+                    {"name": "Logan Lanes", "price": 200, "time": "9:00am - 10:00pm", "category": "Entertaiment", "img": ""},
+                    {"name": "Logan Lanes", "price": 200, "time": "9:00am - 10:00pm", "category": "Entertaiment", "img": ""},
                 ]
                 };
 
@@ -89,8 +49,8 @@
                                 <div class="card-body">
                                     <h3>{{name}}</h3>
                                     <h4>{{price}}</h4>
-                                    <h4>9:00am - 10:00pm</h4>
-                                    <span class="badge badge-pill badge-primary">Entertaimaint</span>
+                                    <h4>{{time}}</h4>
+                                    <span class="badge badge-pill badge-primary">{{category}}</span>
                                     <div><br></div>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
