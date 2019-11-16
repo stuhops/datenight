@@ -73,7 +73,7 @@ table th {
 }
  
 .stars-outer::before {
-  content: "\f006 \f006 \f006 \f006 \f006";
+  content: "\f006";
 }
  
 .stars-inner {
@@ -81,12 +81,11 @@ table th {
   top: 0;
   left: 0;
   white-space: nowrap;
-  overflow: hidden;
-  width: 0;
+  visibility: hidden;
 }
  
 .stars-inner::before {
-  content: "\f005 \f005 \f005 \f005 \f005";
+  content: "\f005";
   color: #f8ce0b;
 }
 

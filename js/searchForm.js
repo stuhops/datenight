@@ -70,3 +70,12 @@ function fixStepIndicator(n) {
   //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+
+
+function changeStars(rating, parentId) {
+  const starTotal = 4;
+
+  for(i = 1; i <= rating; i++) {
+    document.getElementById(parentId + '-' + rating).style.visibility = 'visible';
+  }
+}

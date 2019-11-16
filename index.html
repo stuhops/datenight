@@ -41,12 +41,21 @@
                 <tr class="food-form">
                   <td>Food</td>
                   <td>
-                    <div class="stars-outer">
-                      <div class="stars-inner"></div>
-                    </div>
+                    <span class="stars-outer" onclick="changeStars(1, 'food-form');">
+                      <span id="food-form-1" class="stars-inner"></span>
+                    </span>
+                    <span class="stars-outer">
+                      <span id="food-form-2" class="stars-inner"></span>
+                    </span>
+                    <span class="stars-outer">
+                      <span id="food-form-3" class="stars-inner"></span>
+                    </span>
+                    <span class="stars-outer">
+                      <span id="food-form-4" class="stars-inner"></span>
+                    </span>
                   </td>
                 </tr>
-                <tr class="entertainment-form">
+                <!-- <tr class="entertainment-form">
                   <td>Entertainment</td>
                   <td>
                     <div class="stars-outer">
@@ -78,12 +87,11 @@
                     </div>
                   </td>
                 </tr>
-            
-                <!-- 3 more rows here -->
-                
+             -->
               </tbody>
             </table> 
           </div>
+
           
           <div style="overflow:auto;">
             <div style="float:right;">
