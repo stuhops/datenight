@@ -85,6 +85,8 @@ function changeStars(rating, parentId) {
     }
   }
 
+  document.getElementById(parentId).value = rating;
+
   for(i = 1; i <= rating; i++) {
     document.getElementById(parentId + '-' + i).style.visibility = 'visible';
   }
@@ -94,6 +96,11 @@ function changeStars(rating, parentId) {
 
 }
 
+
+
+
+
+/** BEGIN MAPS CODE */
 
 /**
  * A distance widget that will display a circle that can be resized and will
@@ -274,3 +281,6 @@ function displayInfo(widget) {
 }
 
 google.maps.event.addDomListener(window, 'load', init);
+
+
+/** END MAPS CODE */
