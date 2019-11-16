@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-api_key=AIzaSyAMs2k4rr3VCdl2AV7CCozKLbNOmJtNsLc
-=======
 document.addEventListener('DOMContentLoaded', function () {
     /* your logic here */
     document.body.style.backgroundColor = "grey";
@@ -23,4 +20,16 @@ function api_call(){
     });
 }
 
->>>>>>> Stashed changes
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}

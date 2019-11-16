@@ -4,7 +4,109 @@
         <title>FUN NIGHT</title>
     </head>
 
-    <body>
-        <script src="js/script.js"></script>
-    </body>
+<body class="bg-dark">
+  <div id="form-container" class="container bg-secondary my-5 p-5">
+    <div class="row">
+      <div class="col-12 my-auto">
+        <form id="regForm" class="mx-auto">
+
+          <h1>Register:</h1>
+          <!-- One "tab" for each step in the form: -->
+          <div class="tab">
+            <div class="form-group">
+                <label for="loc">Location</label>
+                <p>Click the button to get your coordinates.</p>
+
+                <button onclick="getLocation()">Try It</button>
+                <!--<input type="text" class="form-control" id="loc">-->
+            </div>
+            <div class="form-group">
+                <label for="loc-radius">Mile Radius</label>
+                <input type="range" class="custom-range" min="1" max="20" id="loc-radius">
+            </div>
+          </div>
+          
+          <div class="tab">
+            <h3>Categories</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="food-form">
+                  <td>Food</td>
+                  <td>
+                    <div class="stars-outer">
+                      <div class="stars-inner"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="entertainment-form">
+                  <td>Entertainment</td>
+                  <td>
+                    <div class="stars-outer">
+                      <div class="stars-inner"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="shopping-form">
+                  <td>Shopping</td>
+                  <td>
+                    <div class="stars-outer">
+                      <div class="stars-inner"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="self-care-form">
+                  <td>Self Care</td>
+                  <td>
+                    <div class="stars-outer">
+                      <div class="stars-inner"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="random-form">
+                  <td>Random</td>
+                  <td>
+                    <div class="stars-outer">
+                      <div class="stars-inner"></div>
+                    </div>
+                  </td>
+                </tr>
+            
+                <!-- 3 more rows here -->
+                
+              </tbody>
+            </table> 
+          </div>
+          
+          <div style="overflow:auto;">
+            <div style="float:right;">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+          </div>
+          
+          <!-- Circles which indicates the steps of the form: -->
+          <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+          </div>
+          
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+  <script src="js/script.js"></script>
+  <script src="js/searchForm.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
 </html>
