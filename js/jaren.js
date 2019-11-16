@@ -17,6 +17,8 @@ function handleSubmit() {
     var location = "Logan Utah";
     var radius = "1000";
 
+    var googleData;
+
 
 
 
@@ -56,7 +58,7 @@ function handleSubmit() {
             console.log("Longitude and latitude: " + lat + " " + long);
 
 
-            var googleURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=" + radius + "&key=" + getLine();
+            var googleURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=" + radius + "&min=0" + "&key=" + getLine();
         
             console.log("FETCHING: " + googleURL);
         
@@ -66,8 +68,127 @@ function handleSubmit() {
                 .then(r => r.json()) 
         
                 .then(json => { 
-                    theData = json;
-                    console.log(theData);
+                    googleData = json;
+                    console.log(googleData);
+
+
+                    var orgResults = {
+                        food: [],
+                        entertainment: [],
+                        shopping: [],
+                        selfcare: [],
+                        drinks: [],
+                        random: [],
+                    }
+
+
+                    var results = googleData.results;
+
+                    for (var i = 0; i < results.length; i++) {
+                        for (var j = 0; j < results[i].types.length; j++) {
+                            if (results[i].types[j] == "food") {
+                                console.log(results[i].name);
+                                orgResults.food.push(results[i]);
+                            }
+                            if (results[i].types[j] == "aquarium" || results[i].types[j] == "art_gallery" || results[i].types[j] == "bowling_alley" || results[i].types[j] == "campground" ||  results[i].types[j] == "casino" ||  results[i].types[j] == "library" || results[i].types[j] == "movie_theater" || results[i].types[j] == "museum" || results[i].types[j] == "night_club" || results[i].types[j] == "park" || results[i].types[j] == "tourist_attraction" || results[i].types[j] == "zoo"){
+                                console.log(results[i].name);
+                                orgResults.entertainment.push(results[i]);
+                            }
+                            // if (results[i].types[j] == "bicycle_store" || name[i].types[j] == "book_store" || name[i].types[j] == "clothing_store" || name[i].types[j] == "convenience_store" || name[i].types[j] == "department_store" || name[i].types[j] == "drugstore" || name[i].types[j] == "electronics_store" || name[i].types[j] == "florist" || name[i].types[j] == "furniture_store" || name[i].types[j] == "gas_station" || name[i].types[j] == "grocery_or_supermarket" || name[i].types[j] == "hardware_store" || name[i].types[j] == "home_goods_store" || name[i].types[j] == "jewelry_store" || name[i].types[j] == "shoe_store" || name[i].types[j] == "shopping_mall" || name[i].types[j] == "store" || ) {
+                            if (results[i].types[j] == "store") {
+                                console.log(results[i].name);
+                                orgResults.shopping.push(results[i]);
+                            }
+                            if (results[i].types[j] == "beauty_salon" || results[i].types[j] == "hair_care" || results[i].types[j] == "gym" || results[i].types[j] == "spa") {
+                                console.log(results[i].name);
+                                orgResults.selfcare.push(results[i]);
+                            }
+                            if (results[i].types[j] == "bar" || results[i].types[j] == "liquor_store" || results[i].types[j] == "grocery_or_supermarket" || results[i].types[j] == "supermarket") {
+                                console.log(results[i].name);
+                                orgResults.drinks.push(results[i]);
+                            }
+                        }
+                        console.log(results[i].name);
+                        orgResults.random.push(results[i]);
+                    }
+
+                    var resultingPlaces = [];
+
+                    var foodCheckbox = document.getElementById("food").value;
+                    if (foodCheckbox > 0) {
+                        pickedFood = getRandomElement(orgResults.food);
+                        resultingPlaces.push(pickedFood);
+                        // for (var i = 0; i < orgResults.food.length; i++) {
+                        //     if (orgResults.food[i].rating > foodCheckbox) {
+                                
+                        //     }
+                        // }
+                    }
+
+                    var entertainmentCheckbox = document.getElementById("entertainment").value;
+                    if (entertainmentCheckbox > 0) {
+                        pickedEntertainment = getRandomElement(orgResults.entertainment);
+                        resultingPlaces.push(pickedEntertainment);
+
+                        // for (var i = 0; i < orgResults.entertainment.length; i++) {
+                        //     if (orgResults.entertainment[i].rating > entertainmentCheckbox) {
+                        //         orgByValue.push(orgResults.entertainment[i]);
+                        //     }
+                        // }
+                    }
+
+                    var shoppingCheckbox = document.getElementById("shopping").value;
+                    if (shoopingCheckbox > 0) {
+                        pickedShopping = getRandomElement(orgResults.shopping);
+                        resultingPlaces.push(pickedShopping);
+
+                        // for (var i = 0; i < orgResults.shopping.length; i++) {
+                        //     if (orgResults.shopping[i].rating > shoppingCheckbox) {
+                        //         orgByValue.push(orgResults.shopping[i]);
+                        //     }
+                        // }
+                    }
+
+                    var selfcareCheckbox = document.getElementById("selfcare").value;
+                    if (selfcareCheckbox > 0) {
+                        pickedSelfcare = getRandomElement(orgResults.selfcare);
+                        resultingPlaces.push(pickedSelfcare);
+
+                        // for (var i = 0; i < orgResults.selfcare.length; i++) {
+                        //     if (orgResults.selfcare[i].rating > selfcareCheckbox) {
+                        //         orgByValue.push(orgResults.selfcare[i]);
+                        //     }
+                        // }
+                    }
+
+                    var drinksCheckbox = document.getElementById("drinks").value;
+                    if (drinksCheckbox > 0) {
+                        pickedDrinks = getRandomElement(orgResults.drinks);
+                        resultingPlaces.push(pickedDrinks);
+
+                        // for (var i = 0; i < orgResults.drinks.length; i++) {
+                        //     if (orgResults.drinks[i].rating > drinkCheckbox) {
+                        //         orgByValue.push(orgResults.drinks[i]);
+                        //     }
+                        // }
+                    }
+
+                    var randomCheckbox = document.getElementById("random").value;
+                    if (randomCheckbox > 0) {
+                        pickedRandom = getRandomElement(orgResults.random);
+                        resultingPlaces.push(pickedRandom);
+
+                        // for (var i = 0; i < orgResults.drinks.length; i++) {
+                        //     if (orgResults.drinks[i].rating > drinkCheckbox) {
+                        //         orgByValue.push(orgResults.drinks[i]);
+                        //     }
+                        // }
+                    }
+
+
+                    for (var i = 0; i < resultingPlaces.length; i++) {
+                        
+                    }
         
                     
         
@@ -76,12 +197,15 @@ function handleSubmit() {
 
     });
 
+    // if (document.getElementById("Stu ID").value > 0) {
+
+    // }
 
 
 
 
 
-
+    // var randomElement = getRandomElement(foodArray);
 
 
     // API call to get ALL markers within location and radius
@@ -159,4 +283,8 @@ function getLine() {
     textByLine = textByLine.replace(/X/gi, "");
 
     return textByLine;
+}
+
+function getRandomElement(inputArray) {
+    return inputArray[Math.floor(Math.random() * foodArray.size())];
 }
