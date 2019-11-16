@@ -73,7 +73,9 @@ table th {
 }
  
 .stars-outer::before {
-  content: "\f006";
+  content: "\f155";
+  color: grey;
+  opacity: 75%;
 }
  
 .stars-inner {
@@ -85,7 +87,7 @@ table th {
 }
  
 .stars-inner::before {
-  content: "\f005";
+  content: "\f155";
   color: #f8ce0b;
 }
 
