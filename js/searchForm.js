@@ -76,6 +76,6 @@ function changeStars(rating, parentId) {
   const starTotal = 4;
 
   for(i = 1; i <= rating; i++) {
-    document.getElementById(parentId + '-' + rating).style.visibility = 'visible';
+    document.getElementById(parentId + '-' + i).style.visibility = 'visible';
   }
 }
