@@ -244,8 +244,8 @@
           // var location = document.getElementById("input-location").value;
           // var radius = document.getElementById("radius").value;
 
-          var location = "Logan Utah";
-          var radius = "1000";
+          var location = document.getElementById("loc").value;
+          var radius = "10000";
 
           var googleData;
 
@@ -409,9 +409,12 @@
 
                           // console.log(resultingPlaces);
 
+                          
+                          console.log("Resulting places" + resultingPlaces);
 
                           for (var i = 0; i < resultingPlaces.length; i++) {
                             console.log("dafadfd" + resultingPlaces[0]);
+                            if (typeof(resultingPlaces[i]) != "undefined") {
                               var newPlace = {
                                   name: "" + resultingPlaces[i].name,
                                   vicinity: "" + resultingPlaces[i].vicinity,
@@ -419,6 +422,8 @@
                               }
 
                               data.items.push(newPlace);
+                            }
+
                           }          
 
                           // console.dir(data);
