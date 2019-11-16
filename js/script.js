@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function api_call(){
-    let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=bar&keyword=cruise&key=AIzaSyCWafdsAvOrGNrtB7RPOmjcfwt5aNkJEvw"
+    let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=bar&keyword=cruise&key=api_key"
     fetch(url) // make a request of the URL
     .then( r => r.json() )  // convert the response into JSON
     .then( json => {
@@ -20,16 +20,15 @@ function api_call(){
     });
 }
 
-var x = document.getElementById("demo");
 function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
   }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
+  
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+  }
