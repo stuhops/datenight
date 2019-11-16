@@ -1,3 +1,12 @@
+// library = document.createElement("script");
+// library.setAttribute("type", "text/javascript");
+// var myLine = getLine();
+// var myString = "https://maps.googleapis.com/maps/api/js?key=" + myLine + "&libraries=places";
+// library.setAttribute("src", myString);
+// document.getElementsByTagName("head").appendChild(library);
+
+
+
 
 function handleSubmit() {
     var requestString = "";
@@ -22,32 +31,17 @@ function handleSubmit() {
     //     }
     // });
 
-    var config = {
-        first: "AIzaSXyCW",
-        second: "afdsAvOrG",
-        third: "NrtBX7RP",
-        fourth: "OmXjcfwtX5",
-        fifth: "aNkJXXEvw"
-    }
-    var size = Object.keys(config).length;
-    var textByLine = "";
-
-    textByLine += config["first"];
-    textByLine += config["second"];
-    textByLine += config["third"];
-    textByLine += config["fourth"];
-    textByLine += config["fifth"];
-    textByLine = textByLine.replace(/X/gi, "");
-
     location = location.replace(" ", "+");
 
 
-    var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=" + textByLine;
+    var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + "&key=" + getLine();
 
     // Erik's fetch method
     console.log("Fetching geocode: " + geocodeURL);
     var lat;
     var long;
+
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
     fetch(geocodeURL)
         .then(r => r.json()) 
@@ -61,27 +55,33 @@ function handleSubmit() {
             long = theData.results[0].geometry.location.lng;
             console.log("Longitude and latitude: " + lat + " " + long);
 
+
+            var googleURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long + "&radius=" + radius + "&key=" + getLine();
+        
+            console.log("FETCHING: " + googleURL);
+        
+        
+            // Erik's fetch method
+            fetch(proxyurl + googleURL)
+                .then(r => r.json()) 
+        
+                .then(json => { 
+                    theData = json;
+                    console.log(theData);
+        
+                    
+        
+        
+            });
+
     });
 
 
-    // var googleURL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?locationbias=circle:" + radius + "@" +  + ",";
-    // googleURL += results[0].location.longitude + "&key=" + textByLine;
-
-    // console.log("FETCHING: " + googleURL);
 
 
-    // // Erik's fetch method
-    // fetch(googleURL)
-    //     .then(r => r.json()) 
-
-    //     .then(json => { 
-    //         theData = json;
-
-    //         latestGoldValue = theData.dataset.data[0][1];
-    //         console.log("Latest gold value: " + latestGoldValue);
 
 
-    // });
+
 
 
     // API call to get ALL markers within location and radius
@@ -138,4 +138,25 @@ function handleSubmit() {
     // for (var i = 0; i < checkedCategories.size(); i++) {
     //     if 
     // }
+}
+
+function getLine() {
+    var config = {
+        first: "AIzaSXyCW",
+        second: "afdsAvOrG",
+        third: "NrtBX7RP",
+        fourth: "OmXjcfwtX5",
+        fifth: "aNkJXXEvw"
+    }
+    var size = Object.keys(config).length;
+    var textByLine = "";
+
+    textByLine += config["first"];
+    textByLine += config["second"];
+    textByLine += config["third"];
+    textByLine += config["fourth"];
+    textByLine += config["fifth"];
+    textByLine = textByLine.replace(/X/gi, "");
+
+    return textByLine;
 }
