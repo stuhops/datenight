@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/index.css" media="screen">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"></script>
 </head>
 
 <body class="bg-dark">
@@ -15,7 +16,6 @@
         <form id="regForm" class="mx-auto">
 
           <h1>Register:</h1>
-          
           <!-- One "tab" for each step in the form: -->
           <div class="tab">
             <div class="form-group">
@@ -30,15 +30,59 @@
           
           <div class="tab">
             <h3>Categories</h3>
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="form-group">
-                    <label for="category-x">$$$$</label>
-                    <input type="Text" class="form-control" id="category-x">
-                </div>
-              </div>
-            </div>
-
+            <table>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="food-form">
+                  <td>Food</td>
+                  <td>
+                    <div class="stars-outer">
+                      <div class="stars-inner"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="entertainment-form">
+                  <td>Entertainment</td>
+                  <td>
+                    <div class="stars-outer">
+                      <div class="stars-inner"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="shopping-form">
+                  <td>Shopping</td>
+                  <td>
+                    <div class="stars-outer">
+                      <div class="stars-inner"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="self-care-form">
+                  <td>Self Care</td>
+                  <td>
+                    <div class="stars-outer">
+                      <div class="stars-inner"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="random-form">
+                  <td>Random</td>
+                  <td>
+                    <div class="stars-outer">
+                      <div class="stars-inner"></div>
+                    </div>
+                  </td>
+                </tr>
+            
+                <!-- 3 more rows here -->
+                
+              </tbody>
+            </table> 
           </div>
           
           <div style="overflow:auto;">
@@ -52,14 +96,12 @@
           <div style="text-align:center;margin-top:40px;">
             <span class="step"></span>
             <span class="step"></span>
-            <span class="step"></span>
           </div>
           
           </form>
         </div>
       </div>
     </div>
-
 
 
 
