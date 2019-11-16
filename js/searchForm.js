@@ -70,3 +70,26 @@ function fixStepIndicator(n) {
   //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+
+
+function changeStars(rating, parentId) {
+  const starTotal = 4;
+
+  if(rating <= starTotal &
+         document.getElementById(parentId + '-' + rating).style.visibility == 'visible') {
+    if(rating == 4) {
+      rating = 0;
+    }
+    else if(document.getElementById(parentId + '-' + (rating+1)).style.visibility == 'hidden') {
+         rating = 0;
+    }
+  }
+
+  for(i = 1; i <= rating; i++) {
+    document.getElementById(parentId + '-' + i).style.visibility = 'visible';
+  }
+  for(i = rating+1; i <= starTotal; i++) {
+    document.getElementById(parentId + '-' + i).style.visibility = 'hidden';
+  }
+
+}
