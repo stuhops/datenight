@@ -2,10 +2,76 @@
 <html lang="en">
     <head>
         <title>FUN NIGHT</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/result.css">
     </head>
 
     <body>
-        <script src="js/script.js"></script>
+        <div class="d-flex justify-content-around align-items-baseline bg-light">
+            <div>
+                <h1>Schedule</h1>
+            </div>
+            <div class="">
+                <a class="btn btn-primary" href="/index.html" role="button">Back</a>
+            </div>
+        </div>
+        <div class="text-center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d381047.92790397763!2d-112.11456220022761!3d41.74345309876192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87547de837c9b55f%3A0x683330b88a6cb3a4!2sLogan%20Lanes!5e0!3m2!1sen!2sus!4v1573884556921!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+        <div class="py-5 bg-light">
+            <div class="container">
+                <div class="row" id="target">
 
+                </div>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+        <script>
+            $(function () {
+                var data = {
+                "items": [
+                    {"name": "Logan Lanes", "price": 200, "time": "9:00am - 10:00pm", "category": "Entertaiment", "img": ""},
+                    {"name": "Logan Lanes", "price": 200, "time": "9:00am - 10:00pm", "category": "Entertaiment", "img": ""},
+                    {"name": "Logan Lanes", "price": 200, "time": "9:00am - 10:00pm", "category": "Entertaiment", "img": ""},
+                    {"name": "Logan Lanes", "price": 200, "time": "9:00am - 10:00pm", "category": "Entertaiment", "img": ""},
+                    {"name": "Logan Lanes", "price": 200, "time": "9:00am - 10:00pm", "category": "Entertaiment", "img": ""},
+                ]
+                };
+
+                var template = `{{#items}}
+                <div class="col-md-12 place">
+                            <div class="card mb-4 shadow-sm">
+                                <img src="img/Screen Shot 2019-11-15 at 10.25.30 PM.png" alt="">
+                                <div class="card-body">
+                                    <h3>{{name}}</h3>
+                                    <h4>{{price}}</h4>
+                                    <h4>{{time}}</h4>
+                                    <span class="badge badge-pill badge-primary">{{category}}</span>
+                                    <div><br></div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="https://loganlanesinc.com/">Detail</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="arrow mx-auto"></div>
+                    </div>
+                    {{/items}}`;
+
+                // Mustache.js実行
+                var html = Mustache.render(template, data);
+
+                // DOM操作
+                $('#target').html(html);
+            });
+        </script>
     </body>
 </html>
