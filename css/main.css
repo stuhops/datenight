@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Comfortaa', cursive;
 }
@@ -6,7 +10,29 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #1b2126;
 }
 
+.head-logo {
+  /* font-size: 96px; */
+  font-size: 72px;
+}
+
 .text-accent {
   color: #00f2f2;
+}
+
+.snap-row {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 50%;
+  overflow-x: scroll;
+  display: flex;
+}
+
+.snap-child {
+  scroll-snap-align: center;
+  width: 569px;
+  margin: 1px 1rem 0px 1rem;
+}
+
+.snap-child-active {
+  width: 720px;
 }
 
