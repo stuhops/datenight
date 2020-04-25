@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .snap-row {
   scroll-snap-type: x mandatory;
-  scroll-padding: 50%;
+  /* scroll-padding: 50%; */
   overflow-x: scroll;
   display: flex;
 }
@@ -30,6 +30,11 @@ h1, h2, h3, h4, h5, h6 {
   scroll-snap-align: center;
   width: 569px;
   margin: 1px 1rem 0px 1rem;
+  position: relative;
+}
+
+.snap-child-left {
+  margin-left: 40vw;
 }
 
 .snap-child-active {
