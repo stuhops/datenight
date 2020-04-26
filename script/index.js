@@ -4,19 +4,9 @@ $(document).ready(function(){
         <div class="snap-row transport-row mt-4">
           <div class="snap-child-padding"></div>
 
-          <div class="snap-child snap-child-left">
-            <div class="card">
-              <img class="card-img-top" src="./assets/profile.png" alt="Card image">
-              <div class="card-body">
-                <h4 class="card-title">Directions</h4>
-                <p class="card-text">Drive, bike, or walk to your destination</p>
-                <a href="#" class="btn btn-primary">Open Maps</a>
-              </div>
-            </div>
-          </div>
           <div class="snap-child snap-child-active">
             <div class="card">
-              <img class="card-img-top" src="./assets/profile.png" alt="Card image">
+              <img class="card-img-top" src="./assets/uber_logo.png" alt="Card image">
               <div class="card-body">
                 <h4 class="card-title">Uber</h4>
                 <p class="card-text">Let Uber take you to your next activity</p>
@@ -24,13 +14,13 @@ $(document).ready(function(){
               </div>
             </div>
           </div>
-          <div class="snap-child">
+          <div class="snap-child snap-child-left">
             <div class="card">
-              <img class="card-img-top" src="./assets/profile.png" alt="Card image">
+              <img class="card-img-top" src="./assets/maps.png" alt="Card image">
               <div class="card-body">
-                <h4 class="card-title">Public Transit</h4>
-                <p class="card-text">Find public transit to get to the next activity</p>
-                <a href="#" class="btn btn-primary">Find Transit</a>
+                <h4 class="card-title">Directions</h4>
+                <p class="card-text">Drive, bike, or walk to your destination</p>
+                <a href="#" class="btn btn-primary">Open Maps</a>
               </div>
             </div>
           </div>
@@ -57,6 +47,4 @@ $(document).ready(function(){
     $(this).get(0).scrollIntoView()
     $(window).scrollTop(pos);
   });
-
-  // ------------------------------------ Components -------------------------------------
 });
