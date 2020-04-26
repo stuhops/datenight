@@ -2,21 +2,21 @@
   box-sizing: border-box;
 }
 
+.bg-midnight {
+  background-color: #1b2126;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Comfortaa', cursive;
 }
 
-.bg-midnight {
-  background-color: #1b2126;
+.footer {
+  height: 50vh;
 }
 
 .head-logo {
   /* font-size: 96px; */
   font-size: 72px;
-}
-
-.text-accent {
-  color: #00f2f2;
 }
 
 .snap-row {
@@ -50,3 +50,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 16px 2px rgba(0, 242, 242, .6);
 }
 
+.text-accent {
+  color: #00f2f2;
+}
