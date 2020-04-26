@@ -28,8 +28,50 @@ $(document).ready(function(){
           <div class="snap-child-padding"></div>
         </div>
       `,
+      activityRow: `
+        <div class="snap-row transport-row mt-4">
+          <div class="snap-child-padding"></div>
+
+          <div class="snap-child snap-child-active">
+            <div class="card">
+              <img class="card-img-top" src="./assets/profile.png" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">Activity</h4>
+                <p class="card-text">Description of some activity</p>
+                <a href="#" class="btn btn-primary">Make a reservation</a>
+              </div>
+            </div>
+          </div>
+          <div class="snap-child">
+            <div class="card">
+              <img class="card-img-top" src="./assets/profile.png" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">Activity</h4>
+                <p class="card-text">Description of some activity</p>
+                <a href="#" class="btn btn-primary">Make a reservation</a>
+              </div>
+            </div>
+          </div>
+          <div class="snap-child">
+            <div class="card">
+              <img class="card-img-top" src="./assets/profile.png" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">Activity</h4>
+                <p class="card-text">Description of some activity</p>
+                <a href="#" class="btn btn-primary">Make a reservation</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="snap-child-padding"></div>
+        </div>
+      `,
   }
 
+  $('#activity-section').append(components.transportRow);
+  $('#activity-section').append(components.activityRow);
+  $('#activity-section').append(components.transportRow);
+  $('#activity-section').append(components.activityRow);
   $('#activity-section').append(components.transportRow);
 
   $('.snap-row').scrollLeft(100);
