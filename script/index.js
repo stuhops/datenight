@@ -73,6 +73,27 @@ $(document).ready(function(){
     iter: 0,  
     arr: [
       { 
+        title: 'Cafe Sabor', 
+        img: './assets/cafe_sabor.jpeg', 
+        description: 'Vibrant Mexican bistro in a former train station...',
+        btn: 'Make Reservation',
+        url: 'cafesabor.com'
+      },
+      { 
+        title: 'Mandrain Garden', 
+        img: './assets/mandrain.jpg', 
+        description: 'Strip-mall Chinese eatery serving traditional fare...',
+        btn: 'Make Reservation',
+        url: 'mandaringarden.biz'
+      },
+      { 
+        title: `Jack's Wood Fired Oven`, 
+        img: './assets/jacks.jpg', 
+        description: 'Cozy outpost offering gourmet pizza, pasta &...',
+        btn: 'Make Reservation',
+        url: 'jackswoodfiredoven.com'
+      },
+      { 
         title: 'Bowling', 
         img: './assets/bowling.jpeg', 
         description: 'Logan Lanes bowling alley on Main Street in Logan', 
@@ -82,18 +103,17 @@ $(document).ready(function(){
       { 
         title: 'Rock Climbing', 
         img: './assets/climbing.jpg', 
-        description: 'Elevation Rock Climbing gym houses the best indoor climbing in Logan. Come check us out!', 
+        description: 'Elevation Rock Climbing gym houses the best...', 
         btn: 'Make Reservation',
         url: 'elevationrockgym.com'
       },
       { 
-        title: 'Rock Climbing', 
-        img: './assets/bowling.jpeg', 
-        description: 'Elevation Rock Climbing gym houses the best indoor climbing in Logan. Come check us out!', 
+        title: 'Axe Throwing', 
+        img: './assets/axe_throwing.jpg', 
+        description: 'Heber Hatchets Axe Throwing of Logan will...', 
         btn: 'Make Reservation',
-        url: 'elevationrockgym.com'
-      },
-
+        url: 'heberhatchets.com'
+      }
     ]
   }
 
@@ -101,7 +121,22 @@ $(document).ready(function(){
     return `
       <div class="snap-child">
         <div class="card">
-          <img class="card-img-top" src="${spec.img}" alt="Card image">
+          <img class="card-img-top snap-child-image" src="${spec.img}" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">${spec.title}</h4>
+            <p class="card-text">${spec.description}</p>
+            <a href="${spec.url}" class="btn btn-primary">${spec.btn}</a>
+          </div>
+        </div>
+      </div>
+    `;
+  } 
+
+  function createActiveSnapChild(spec) {
+    return `
+      <div class="snap-child snap-child-active">
+        <div class="card">
+          <img class="card-img-top snap-child-image" src="${spec.img}" alt="Card image">
           <div class="card-body">
             <h4 class="card-title">${spec.title}</h4>
             <p class="card-text">${spec.description}</p>
@@ -113,15 +148,19 @@ $(document).ready(function(){
   } 
 
   function createActivityRow(numOfActivities=3) {
-    let row = '';
+    let row = '<div class="snap-row transport-row mt-4">';
     row += components.snapChildPadding;
 
-    for(let i = 0; i < numOfActivities; i++) {
+    row += createActiveSnapChild(activities.arr[activities.iter]);
+    activities.iter = (activities.iter + 1) % activities.arr.length;
+
+    for(let i = 1; i < numOfActivities; i++) {
       row += createSnapChild(activities.arr[activities.iter]);
-      activities.iter++;
+      activities.iter = (activities.iter + 1) % activities.arr.length;
     }
 
     row += components.snapChildPadding;
+    row += '</div>';
     return row;
   }
 

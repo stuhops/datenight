@@ -30,13 +30,20 @@ h1, h2, h3, h4, h5, h6 {
   scroll-snap-align: center;
   width: 569px;
   min-width: 60vw;
+  max-width: 60vw;
   margin: 1rem 1rem 1rem 1rem;
   position: relative;
+}
+
+.snap-child-image {
+  width: auto;
+  height: 300px;
 }
 
 .snap-child-padding {
   visibility: hidden;
   min-width: 75vw;
+  max-width: 75vw;
 }
 
 .snap-child-right {
