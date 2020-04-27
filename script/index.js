@@ -66,12 +66,69 @@ $(document).ready(function(){
           <div class="snap-child-padding"></div>
         </div>
       `,
+      snapChildPadding: '<div class="snap-child-padding"></div>',
+  }
+
+  let activities = {
+    iter: 0,  
+    arr: [
+      { 
+        title: 'Bowling', 
+        img: './assets/bowling.jpeg', 
+        description: 'Logan Lanes bowling alley on Main Street in Logan', 
+        btn: 'Make Reservation',
+        url: 'loganlanesinc.com'
+      },
+      { 
+        title: 'Rock Climbing', 
+        img: './assets/climbing.jpg', 
+        description: 'Elevation Rock Climbing gym houses the best indoor climbing in Logan. Come check us out!', 
+        btn: 'Make Reservation',
+        url: 'elevationrockgym.com'
+      },
+      { 
+        title: 'Rock Climbing', 
+        img: './assets/bowling.jpeg', 
+        description: 'Elevation Rock Climbing gym houses the best indoor climbing in Logan. Come check us out!', 
+        btn: 'Make Reservation',
+        url: 'elevationrockgym.com'
+      },
+
+    ]
+  }
+
+  function createSnapChild(spec) {
+    return `
+      <div class="snap-child">
+        <div class="card">
+          <img class="card-img-top" src="${spec.img}" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">${spec.title}</h4>
+            <p class="card-text">${spec.description}</p>
+            <a href="${spec.url}" class="btn btn-primary">${spec.btn}</a>
+          </div>
+        </div>
+      </div>
+    `;
+  } 
+
+  function createActivityRow(numOfActivities=3) {
+    let row = '';
+    row += components.snapChildPadding;
+
+    for(let i = 0; i < numOfActivities; i++) {
+      row += createSnapChild(activities.arr[activities.iter]);
+      activities.iter++;
+    }
+
+    row += components.snapChildPadding;
+    return row;
   }
 
   $('#activity-section').append(components.transportRow);
-  $('#activity-section').append(components.activityRow);
+  $('#activity-section').append(createActivityRow(3));
   $('#activity-section').append(components.transportRow);
-  $('#activity-section').append(components.activityRow);
+  $('#activity-section').append(createActivityRow(3));
   $('#activity-section').append(components.transportRow);
 
   $('.snap-row').scrollLeft(100);
