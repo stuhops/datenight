@@ -77,14 +77,8 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 75vw;
   }
 
-  .snap-child-right {
-    width: 40vw;
-    height: 100%;
-    background-color: aliceblue;
-  }
-
   .snap-child-active {
-    min-width: 75vw;
+    min-width: 65vw;
     box-shadow: 0 0 16px 2px rgba(0, 242, 242, .6);
   }
 }
